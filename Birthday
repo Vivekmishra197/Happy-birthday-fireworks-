@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="fireworksCanvas"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/fireworks.js"></script>
+    <script>
+        const container = document.querySelector('body');
+        const fireworks = new Fireworks(container, { autoresize: true });
+        fireworks.start();
+        setTimeout(() => {
+            const message = document.createElement('div');
+            message.style.position = 'absolute';
+            message.style.top = '50%';
+            message.style.left = '50%';
+            message.style.transform = 'translate(-50%, -50%)';
+            message.style.color = 'white';
+            message.style.fontSize = '3rem';
+            message.style.textAlign = 'center';
+            message.innerHTML = "🎉 Happy Birthday! 🎉";
+            container.appendChild(message);
+        }, 2000);
+    </script>
+</body>
+</html>
